@@ -165,7 +165,7 @@ class UX {
     static make(options) {
         let defaults = {
             root: document.body,
-            type: "div",
+            type: this.ELEM.CONTAINER.DIV,
             attributes: {},
             text: ""
         }
@@ -181,6 +181,8 @@ class UX {
         }
 
         element.textContent = elemObj.text;
+
+        return element;
     }
 
 
@@ -197,6 +199,181 @@ class UX {
                 BEFORE: "before",
                 AFTER: "after",
                 LAST: "last"
+            }
+        };
+    }
+
+
+    static get ELEM() {
+        return {
+            HTML: "html",
+
+            APPLICATION: {
+                DATA: "data",
+                EMBED: "embed",
+                OBJECT: "object",
+                PARAM: "param",
+                VAR: "var"
+            },
+
+            CONTAINER: {
+                BODY: "body",
+                CANVAS: "canvas",
+                DIALOG: "dialog",
+                DIV: "div",
+                FOOTER: "footer",
+                HEADER: "header",
+                I_FRAME: "iframe",
+                SECTION: "section",
+                SPAN: "span",
+                SVG: "svg",
+                TEMPLATE: "template"
+            },
+
+            CONTENT: {
+                ABBR: "abbr",
+                ADDRESS: "address",
+                ARTICLE: "article",
+                ASIDE: "aside",
+                B: "b",
+                BDI: "bdi",
+                BDO: "bdo",
+                BLOCKQUOTE: "blockquote",
+                BR: "br",
+                CITE: "cite",
+                CODE: "code",
+                DD: "dd",
+                DEL: "del",
+                DETAILS: "details",
+                DFN: "dfn",
+                DL: "dl",
+                DT: "dt",
+                EM: "em",
+                FIG_CAPTION: "figcaption",
+                FIGURE: "figure",
+                H1: "h1",
+                H2: "h2",
+                H3: "h3",
+                H4: "h4",
+                H5: "h5",
+                H6: "h6",
+                HR: "hr",
+                I: "i",
+                INS: "ins",
+                KBD: "kbd",
+                MAIN: "main",
+                MARK: "mark",
+                OL: "ol",
+                P: "p",
+                PRE: "pre",
+                Q: "q",
+
+                RUBY: {
+                    RP: "rp",
+                    RT: "rt",
+                    RUBY: "ruby"
+                },
+
+                S: "s",
+                SAMP: "samp",
+                SMALL: "small",
+                STRONG: "strong",
+                SUB: "sub",
+                SUMMARY: "summary",
+                SUP: "sup",
+                TEMPLATE: "template",
+                U: "u",
+                UL: "ul",
+                VAR: "var",
+                WBR: "wbr"
+            },
+
+            CSS: {
+                LINK: "link",
+                STYLE: "style"
+            },
+
+            FORM: {
+                BUTTON: "button",
+                DATA_LIST: "datalist",
+                FIELD_SET: "fieldset",
+                INPUT: "input",
+                LABEL: "label",
+                LEGEND: "legend",
+                LI: "li",
+                OPT_GROUP: "optgroup",
+                OPTION: "option",
+                SELECT: "select",
+                TEXT_AREA: "textarea",
+
+                toString: () => {
+                    return "form"
+                }
+            },
+
+            IMAGE: {
+                AREA: "image",
+                IMG: "img",
+                MAP: "map",
+                PICTURE: "picture",
+                SOURCE: "source"
+            },
+
+            LINK: {
+                A: "a",
+                BASE: "base",
+                NAV: "nav",
+
+                toString: () => {
+                    return "link";
+                }
+            },
+
+            MEDIA: {
+                AUDIO: "audio",
+                SOURCE: "source",
+                TRACK: "track",
+                VIDEO: "video"
+            },
+
+            META: {
+                HEAD: "head",
+                TITLE: "title",
+
+                toString: () => {
+                    return "meta";
+                }
+            },
+
+            SCRIPT: {
+                NO_SCRIPT: "noscript",
+                
+                toString: () => {
+                    return "script";
+                }
+            },
+
+            TABLE: {
+                CAPTION: "caption",
+                COL: "col",
+                COL_GROUP: "colgroup",
+                T_BODY: "tbody",
+                TD: "td",
+                T_FOOT: "tfoot",
+                TH: "th",
+                T_HEAD: "thead",
+                TR: "tr",
+
+                toString: () => {
+                    return "table";
+                }
+            },
+
+            UNIT: {
+                METER: "meter",
+                OUTPUT: "output",
+                PROGRESS: "progress",
+                TIME: "time"
             }
         };
     }
